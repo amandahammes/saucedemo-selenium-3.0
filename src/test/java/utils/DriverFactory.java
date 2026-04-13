@@ -12,7 +12,6 @@ public class DriverFactory {
     private static WebDriver driver;
 
     private DriverFactory() {
-        // impede instanciação
     }
 
     public static WebDriver getDriver() {
