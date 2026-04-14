@@ -30,3 +30,23 @@
 2026-04-13 15:48:19 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
 2026-04-13 15:48:20 INFO  tests.base.BaseTest - Iniciando teste: Login usuário inválido
 2026-04-13 15:48:21 INFO  tests.base.BaseTest - Finalizando teste
+2026-04-14 17:26:46 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-14 17:26:46 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
+2026-04-14 17:26:49 INFO  tests.base.BaseTest - Iniciando teste: Compra de um Item
+2026-04-14 17:27:01 INFO  tests.base.BaseTest - Finalizando teste
+2026-04-14 17:27:20 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-14 17:27:20 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
+2026-04-14 17:27:22 INFO  tests.base.BaseTest - Iniciando teste: Compra de um Item
+2026-04-14 17:27:33 INFO  tests.base.BaseTest - Finalizando teste
+2026-04-14 17:29:21 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-14 17:29:21 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
+2026-04-14 17:29:22 INFO  tests.base.BaseTest - Iniciando teste: Compra de um Item
+2026-04-14 17:29:31 INFO  tests.base.BaseTest - Finalizando teste
+2026-04-14 17:29:38 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-14 17:29:38 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
+2026-04-14 17:29:40 INFO  tests.base.BaseTest - Iniciando teste: Compra de um Item
+2026-04-14 17:29:52 INFO  tests.base.BaseTest - Finalizando teste
+2026-04-14 17:35:16 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-14 17:35:16 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
+2026-04-14 17:35:17 INFO  tests.base.BaseTest - Iniciando teste: Compra de um Item
+2026-04-14 17:35:19 INFO  tests.base.BaseTest - Finalizando teste
