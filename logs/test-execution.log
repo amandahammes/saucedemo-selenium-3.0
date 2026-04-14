@@ -50,3 +50,14 @@
 2026-04-14 17:35:16 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
 2026-04-14 17:35:17 INFO  tests.base.BaseTest - Iniciando teste: Compra de um Item
 2026-04-14 17:35:19 INFO  tests.base.BaseTest - Finalizando teste
+2026-04-14 17:45:51 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-14 17:45:51 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
+2026-04-14 17:45:53 INFO  tests.base.BaseTest - Iniciando teste: Compra de dois Itens
+2026-04-14 17:45:59 INFO  tests.base.BaseTest - Finalizando teste
+2026-04-14 17:46:17 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-14 17:46:17 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
+2026-04-14 17:46:19 INFO  tests.base.BaseTest - Iniciando teste: Compra de dois Itens
+2026-04-14 17:46:24 INFO  tests.base.BaseTest - Finalizando teste
+2026-04-14 17:50:17 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 146.0.7680.165 (resolved driver for Chrome 146)
+2026-04-14 17:50:17 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\amanda.hammes\.cache\selenium\chromedriver\win64\146.0.7680.165\chromedriver.exe
+2026-04-14 17:50:18 INFO  tests.base.BaseTest - Iniciando teste: Compra de dois Itens

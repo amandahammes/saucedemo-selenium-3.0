@@ -28,6 +28,15 @@ public class PurchaseFlow {
         cartPage.madeCheckout();
     }
 
+    public void selectTwoItemsToCart(){
+        String productToSelect1 = inventoryPage.randomicItem();
+        String productToSelect2 = inventoryPage.randomicItem();
+        inventoryPage.addItemToCart(productToSelect1);
+        inventoryPage.addItemToCart(productToSelect2);
+        headerComponent.goToCart();
+        cartPage.madeCheckout();
+    }
+
     public void doCheckout(String firstName, String lastName, String zipCode){
         checkoutOnePage.fillInCheckoutDetails(firstName, lastName, zipCode);
     }

@@ -38,4 +38,13 @@ public class ShoppingTest extends BaseTest {
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
         purchaseFlow.finishCheckout();
     }
+
+    @Test
+    @DisplayName("Compra de dois Itens")
+    public void purchaseTwoItems(){
+        loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
+        purchaseFlow.selectTwoItemsToCart();
+        purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
+        purchaseFlow.finishCheckout();
+    }
 }
