@@ -31,8 +31,7 @@ public class PurchaseFlow {
     public void selectTwoItemsToCart(){
         String productToSelect1 = inventoryPage.randomicItem();
         String productToSelect2 = inventoryPage.randomicItem();
-        inventoryPage.addItemToCart(productToSelect1);
-        inventoryPage.addItemToCart(productToSelect2);
+        inventoryPage.addProducts(productToSelect1, productToSelect2);
         headerComponent.goToCart();
         cartPage.madeCheckout();
     }

@@ -45,6 +45,7 @@ public class DriverFactory {
 
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-extensions");
+        options.addArguments("--incognito");
 
         return new ChromeDriver(options);
     }
