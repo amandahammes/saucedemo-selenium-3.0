@@ -24,5 +24,4 @@ public class CheckoutOnePage {
         wait.waitForVisibility(inputZipCode).sendKeys(zipCode);
         wait.waitForClickability(buttonContinue).click();
     }
-
 }
