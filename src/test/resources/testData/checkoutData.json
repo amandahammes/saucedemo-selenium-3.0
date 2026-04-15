@@ -4,9 +4,19 @@
     "lastName":"Banana",
     "zipCode":"0123456"
   },
-  "user2": {
+  "userWithoutFirstname": {
+    "firstName":"",
+    "lastName": "Souza",
+    "zipCode": "890000234"
+  },
+  "userWithoutLastname": {
+    "firstName":"Alexander",
+    "lastName": "",
+    "zipCode": "890000234"
+  },
+  "userWithoutZipCode": {
     "firstName":"Alexander",
     "lastName": "Souza",
-    "zipCode": "00000000"
+    "zipCode": ""
   }
 }
