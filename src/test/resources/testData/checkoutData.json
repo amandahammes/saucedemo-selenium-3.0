@@ -1,0 +1,12 @@
+{
+  "user1": {
+    "firstName":"Joana",
+    "lastName":"Banana",
+    "zipCode":"0123456"
+  },
+  "user2": {
+    "firstName":"Alexander",
+    "lastName": "Souza",
+    "zipCode": "00000000"
+  }
+}
