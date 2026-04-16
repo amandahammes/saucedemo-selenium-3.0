@@ -11,6 +11,7 @@ public class PurchaseFlow {
     private CheckoutTwoPage checkoutTwoPage;
     private CheckoutCompletePage checkoutCompletePage;
     private CartPage cartPage;
+    private FinishOrderPage finishOrderPage;
 
     public PurchaseFlow(WebDriver driver) {
         this.inventoryPage = new InventoryPage(driver);
@@ -19,21 +20,24 @@ public class PurchaseFlow {
         this.checkoutTwoPage = new CheckoutTwoPage(driver);
         this.checkoutCompletePage = new CheckoutCompletePage(driver);
         this.cartPage = new CartPage(driver);
+        this.finishOrderPage = new FinishOrderPage(driver);
+    }
+
+    public void goToCheckout(){
+        cartPage.madeCheckout();
     }
 
     public void selectOneItemToCart(){
         String productToSelect = inventoryPage.randomicItem();
         inventoryPage.addItemToCart(productToSelect);
-        headerComponent.goToCart();
-        cartPage.madeCheckout();
+        headerComponent.irParaCarrinho();
     }
 
     public void selectTwoItemsToCart(){
         String productToSelect1 = inventoryPage.randomicItem();
         String productToSelect2 = inventoryPage.randomicItem();
         inventoryPage.addProducts(productToSelect1, productToSelect2);
-        headerComponent.goToCart();
-        cartPage.madeCheckout();
+        headerComponent.irParaCarrinho();
     }
 
     public void doCheckout(String firstName, String lastName, String zipCode){
@@ -41,11 +45,18 @@ public class PurchaseFlow {
     }
 
     public void finishCheckout(){
-        checkoutTwoPage.finishingCheckout();
-        checkoutCompletePage.backHomePage();
+        checkoutTwoPage.finalizandoCheckout();
     }
 
     public CheckoutOnePage getCheckoutOnePage(){
         return this.checkoutOnePage;
+    }
+
+    public CartPage getCartPage(){
+        return  this.cartPage;
+    }
+
+    public FinishOrderPage getFinishOrderPage(){
+        return this.finishOrderPage;
     }
 }

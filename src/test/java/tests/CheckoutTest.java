@@ -38,6 +38,7 @@ public class CheckoutTest extends BaseTest {
         checkoutInformation = checkoutInformation("userWithoutFirstname");
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();
+        purchaseFlow.goToCheckout();
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
         validations.validarMensagemErroCheckout();
     }
@@ -48,6 +49,7 @@ public class CheckoutTest extends BaseTest {
         checkoutInformation = checkoutInformation("userWithoutLastname");
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();
+        purchaseFlow.goToCheckout();
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
         validations.validarMensagemErroCheckout();
     }
@@ -58,6 +60,7 @@ public class CheckoutTest extends BaseTest {
         checkoutInformation = checkoutInformation("userWithoutZipCode");
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();
+        purchaseFlow.goToCheckout();
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
         validations.validarMensagemErroCheckout();
     }

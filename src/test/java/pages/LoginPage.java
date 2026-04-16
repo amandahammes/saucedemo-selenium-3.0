@@ -13,6 +13,7 @@ public class LoginPage {
     private By inputSenha = By.id("password");
     private By botaoLogin = By.id("login-button");
     private By mensagemErro = By.cssSelector("[data-test='error']");
+    private By caixaLogin = By.className("login-box");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -33,5 +34,9 @@ public class LoginPage {
 
     public String pegarMensagemErro(){
         return wait.waitForVisibility(mensagemErro).getText();
+    }
+
+    public void esperarCaixaLoginVisivel(){
+        wait.waitForVisibility(caixaLogin);
     }
 }

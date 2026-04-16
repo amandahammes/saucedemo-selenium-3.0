@@ -8,7 +8,7 @@ public class HeaderComponent {
     private WebDriver driver;
     private WaitUtils wait;
 
-    private By buttonMenu = By.id("menu_button_container");
+    private By buttonMenu = By.id("react-burger-menu-btn");
     private By buttonCart = By.id("shopping_cart_container");
 
     public HeaderComponent(WebDriver driver) {
@@ -16,8 +16,12 @@ public class HeaderComponent {
         this.wait = new WaitUtils(driver);
     }
 
-    public void goToCart(){
+    public void irParaCarrinho(){
         wait.waitForClickability(buttonCart).click();
+    }
+
+    public void irParaMenu(){
+        wait.waitForClickability(buttonMenu).click();
     }
 
 

@@ -55,4 +55,13 @@ public class LoginTest extends BaseTest {
         loginFlow.realizarLogin(invalidUser.getUser(), invalidUser.getPass());
         validations.validarMensagemErroLogin();
     }
+
+    @Test
+    @DisplayName("Realizar logout de usuário logado")
+    public void shouldLogoutSuccessfully(){
+        User validUser = user("usuarioValido");
+        loginFlow.realizarLogin(validUser.getUser(), validUser.getPass());
+        loginFlow.realizarLogout();
+        validations.validarPaginaLogin();
+    }
 }
