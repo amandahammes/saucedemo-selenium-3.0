@@ -9,7 +9,7 @@ public class CartPage {
     private WebDriver driver;
     private WaitUtils wait;
 
-    By buttonCheckout = By.id("checkout");
+    private By buttonCheckout = By.id("checkout");
 
     public CartPage(WebDriver driver) {
         this.driver = driver;

@@ -8,10 +8,11 @@ public class CheckoutOnePage {
     WebDriver driver;
     WaitUtils wait;
 
-    By inputFirstName = By.id("first-name");
-    By inputLastName = By.id("last-name");
-    By inputZipCode = By.id("postal-code");
-    By buttonContinue = By.id("continue");
+    private By inputFirstName = By.id("first-name");
+    private By inputLastName = By.id("last-name");
+    private By inputZipCode = By.id("postal-code");
+    private By buttonContinue = By.id("continue");
+    private By mensagemErro = By.cssSelector("[data-test='error']");
 
     public CheckoutOnePage(WebDriver driver) {
         this.driver = driver;
@@ -23,5 +24,9 @@ public class CheckoutOnePage {
         wait.waitForVisibility(inputLastName).sendKeys(lastName);
         wait.waitForVisibility(inputZipCode).sendKeys(zipCode);
         wait.waitForClickability(buttonContinue).click();
+    }
+
+    public String pegarMensagemErro(){
+        return wait.waitForVisibility(mensagemErro).getText();
     }
 }
