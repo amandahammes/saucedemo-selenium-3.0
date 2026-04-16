@@ -12,6 +12,7 @@ public class LoginPage {
     private By inputUsuario = By.id("user-name");
     private By inputSenha = By.id("password");
     private By botaoLogin = By.id("login-button");
+    private By mensagemErro = By.cssSelector("[data-test='error']");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -28,5 +29,9 @@ public class LoginPage {
 
     public void clicarBotaoLogin(){
         wait.waitForClickability(botaoLogin).click();
+    }
+
+    public String pegarMensagemErro(){
+        return wait.waitForVisibility(mensagemErro).getText();
     }
 }

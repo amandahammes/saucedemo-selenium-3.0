@@ -16,6 +16,7 @@ public class InventoryPage {
 
     private By buttonAddBackPack = By.id("add-to-cart-sauce-labs-backpack");
     private By buttonRemoveBackPack = By.id("remove-sauce-labs-backpack");
+    private By inventoryList = By.className("inventory_list");
 
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
@@ -49,5 +50,9 @@ public class InventoryPage {
         String selectProduct = products.get(sortedProduct);
 
         return selectProduct;
+    }
+
+    public void esperarListaProdutosVisivel(){
+        wait.waitForVisibility(inventoryList);
     }
 }
