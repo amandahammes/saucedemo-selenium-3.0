@@ -15,7 +15,7 @@ public class CheckoutTwoPage {
         this.wait = new WaitUtils(driver);
     }
 
-    public void finishingCheckout(){
+    public void finalizandoCheckout(){
         wait.waitForClickability(buttonFinish).click();
     }
 }

@@ -10,6 +10,7 @@ public class CartPage {
     private WaitUtils wait;
 
     private By buttonCheckout = By.id("checkout");
+    private By itensCarrinho = By.className("cart_item");
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
@@ -18,5 +19,9 @@ public class CartPage {
 
     public void madeCheckout(){
         wait.waitForClickability(buttonCheckout).click();
+    }
+
+    public void verificaExistenciaItensCarrinho(){
+        wait.waitForVisibility(itensCarrinho);
     }
 }

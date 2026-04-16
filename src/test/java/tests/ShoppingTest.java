@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.base.BaseTest;
 import utils.JsonDataReader;
+import validations.Validations;
 
 public class ShoppingTest extends BaseTest {
 
@@ -16,11 +17,13 @@ public class ShoppingTest extends BaseTest {
     private PurchaseFlow purchaseFlow;
     private User userPurchase = user("usuarioValido");
     private CheckoutInformation checkoutInformation = checkoutInformation("user1");
+    private Validations validations;
 
     @BeforeEach
     void initFlow(){
         loginFlow = new LoginFlow(driver);
         purchaseFlow = new PurchaseFlow(driver);
+        validations = new Validations(loginFlow.getLoginPage(), loginFlow.getInventoryPage(), purchaseFlow.getCartPage(), purchaseFlow.getFinishOrderPage());
     }
     private User user(String userType) {
         return JsonDataReader.getUser(userType);
@@ -34,17 +37,29 @@ public class ShoppingTest extends BaseTest {
     @DisplayName("Compra de um Item")
     public void purchaseOneItem(){
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
+        validations.validarLoginComSucesso();
         purchaseFlow.selectOneItemToCart();
+        validations.validarItemNoCarrinho();
+        purchaseFlow.goToCheckout();
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
         purchaseFlow.finishCheckout();
+        validations.validarFinalizacaoCompra();
+        loginFlow.realizarLogout();
+        validations.validarPaginaLogin();
     }
 
     @Test
     @DisplayName("Compra de dois Itens")
     public void purchaseTwoItems(){
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
+        validations.validarLoginComSucesso();
         purchaseFlow.selectTwoItemsToCart();
+        validations.validarItemNoCarrinho();
+        purchaseFlow.goToCheckout();
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
         purchaseFlow.finishCheckout();
+        validations.validarFinalizacaoCompra();
+        loginFlow.realizarLogout();
+        validations.validarPaginaLogin();
     }
 }

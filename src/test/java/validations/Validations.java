@@ -1,8 +1,6 @@
 package validations;
 
-import pages.CheckoutOnePage;
-import pages.InventoryPage;
-import pages.LoginPage;
+import pages.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
@@ -11,16 +9,30 @@ public class Validations {
     private LoginPage loginPage;
     private InventoryPage inventoryPage;
     private CheckoutOnePage checkoutOnePage;
+    private CartPage cartPage;
+    private FinishOrderPage finishOrderPage;
+
+    public Validations(LoginPage loginPage, InventoryPage inventoryPage, CartPage cartPage, FinishOrderPage finishOrderPage) {
+        this.loginPage = loginPage;
+        this.inventoryPage = inventoryPage;
+        this.cartPage = cartPage;
+        this.finishOrderPage = finishOrderPage;
+    }
 
     public Validations(LoginPage loginPage, InventoryPage inventoryPage) {
         this.loginPage = loginPage;
         this.inventoryPage = inventoryPage;
-
     }
 
     public Validations(CheckoutOnePage checkoutOnePage) {
         this.checkoutOnePage = checkoutOnePage;
 
+    }
+
+    public void validarLoginComSucesso(){
+        assertThatCode(() -> inventoryPage.esperarListaProdutosVisivel())
+                .as("Usuário deve ver a lista de produtos após login.")
+                .doesNotThrowAnyException();
     }
 
     public void validarMensagemErroLogin(){
@@ -31,12 +43,6 @@ public class Validations {
                 .contains("Epic sadface");
     }
 
-    public void validarLoginComSucesso(){
-        assertThatCode(() -> inventoryPage.esperarListaProdutosVisivel())
-                .as("Login realizado com sucesso.")
-                .doesNotThrowAnyException();
-    }
-
     public void validarMensagemErroCheckout(){
         assertThat(checkoutOnePage.pegarMensagemErro())
                 .as("Mensagem de erro de checkout (sem primeiro nome, sem último nome e/ou sem código postal).")
@@ -44,6 +50,24 @@ public class Validations {
                 .isNotEmpty()
                 .contains("Error")
                 .contains("is required");
+    }
+
+    public void validarItemNoCarrinho(){
+        assertThatCode(() -> cartPage.verificaExistenciaItensCarrinho())
+                .as("Existência de itens no carrinho")
+                .doesNotThrowAnyException();
+    }
+
+    public void validarFinalizacaoCompra(){
+        assertThatCode(() -> finishOrderPage.esperarMensagemCheckoutCompleto())
+                .as("Compra foi finalizada!")
+                .doesNotThrowAnyException();
+    }
+
+    public void validarPaginaLogin(){
+        assertThatCode(() -> loginPage.esperarCaixaLoginVisivel())
+                .as("Está na página de login")
+                .doesNotThrowAnyException();
     }
 
 }
