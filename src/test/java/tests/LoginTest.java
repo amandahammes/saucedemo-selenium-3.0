@@ -26,7 +26,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Login com usuário válido")
-    public void shouldDoLoginSuccessfully(){
+    public void deveRealizarLoginComSucesso(){
         User validUser = user("usuarioValido");
         loginFlow.realizarLogin(validUser.getUser(), validUser.getPass());
         validations.validarLoginComSucesso();
