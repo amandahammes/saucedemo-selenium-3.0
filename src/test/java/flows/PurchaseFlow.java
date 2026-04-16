@@ -44,4 +44,8 @@ public class PurchaseFlow {
         checkoutTwoPage.finishingCheckout();
         checkoutCompletePage.backHomePage();
     }
+
+    public CheckoutOnePage getCheckoutOnePage(){
+        return this.checkoutOnePage;
+    }
 }

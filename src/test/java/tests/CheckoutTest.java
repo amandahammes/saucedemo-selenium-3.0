@@ -9,17 +9,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.base.BaseTest;
 import utils.JsonDataReader;
+import validations.Validations;
 
 public class CheckoutTest extends BaseTest {
     private LoginFlow loginFlow;
     private PurchaseFlow purchaseFlow;
     private User userPurchase = user("usuarioValido");
     private CheckoutInformation checkoutInformation;
+    private Validations validations;
 
     @BeforeEach
     void initFlow(){
         loginFlow = new LoginFlow(driver);
         purchaseFlow = new PurchaseFlow(driver);
+        validations = new Validations(purchaseFlow.getCheckoutOnePage());
     }
     private User user(String userType) {
         return JsonDataReader.getUser(userType);
@@ -36,6 +39,7 @@ public class CheckoutTest extends BaseTest {
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
+        validations.validarMensagemErroCheckout();
     }
 
     @Test
@@ -45,6 +49,7 @@ public class CheckoutTest extends BaseTest {
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
+        validations.validarMensagemErroCheckout();
     }
 
     @Test
@@ -54,5 +59,6 @@ public class CheckoutTest extends BaseTest {
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();
         purchaseFlow.doCheckout(checkoutInformation.getFirstName(), checkoutInformation.getLastName(), checkoutInformation.getZipCode());
+        validations.validarMensagemErroCheckout();
     }
 }
