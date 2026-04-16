@@ -14,7 +14,7 @@ import validations.Validations;
 public class CheckoutTest extends BaseTest {
     private LoginFlow loginFlow;
     private PurchaseFlow purchaseFlow;
-    private User userPurchase = user("usuarioValido");
+    private User userPurchase = usuario("usuarioValido");
     private CheckoutInformation checkoutInformation;
     private Validations validations;
 
@@ -24,7 +24,7 @@ public class CheckoutTest extends BaseTest {
         purchaseFlow = new PurchaseFlow(driver);
         validations = new Validations(purchaseFlow.getCheckoutOnePage());
     }
-    private User user(String userType) {
+    private User usuario(String userType) {
         return JsonDataReader.getUser(userType);
     }
 
@@ -34,7 +34,7 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     @DisplayName("Checkout sem First Name")
-    public void shouldFailDoingCheckoutWithoutFirstName(){
+    public void deveFalharAoRealizarCheckoutSemPrimeiroNome(){
         checkoutInformation = checkoutInformation("userWithoutFirstname");
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();
@@ -45,7 +45,7 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     @DisplayName("Checkout sem Last Name")
-    public void shouldFailDoingCheckoutWithoutLastName(){
+    public void deveFalharAoRealizarCheckoutSemSobrenome(){
         checkoutInformation = checkoutInformation("userWithoutLastname");
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();
@@ -56,7 +56,7 @@ public class CheckoutTest extends BaseTest {
 
     @Test
     @DisplayName("Checkout sem Zip Code")
-    public void shouldFailDoingCheckoutWithoutZipCode(){
+    public void deveFalharAoRealizarCheckoutSemCodigoPostal(){
         checkoutInformation = checkoutInformation("userWithoutZipCode");
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         purchaseFlow.selectOneItemToCart();

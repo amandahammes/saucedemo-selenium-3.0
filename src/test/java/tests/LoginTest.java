@@ -34,7 +34,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Login com usuário bloqueado")
-    public void shouldFailLoginWithBlockedUser(){
+    public void deveFalharAoRealizarLoginComUsuarioBloqueado(){
         User blockerUser = user("usuarioBloqueado");
         loginFlow.realizarLogin(blockerUser.getUser(), blockerUser.getPass());
         validations.validarMensagemErroLogin();
@@ -42,7 +42,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Login sem senha")
-    public void shouldFailLoginWithoutPassword(){
+    public void deveFalharAoRealizarLoginSemSenha(){
         User userWithoutPass = user("usuarioSemSenha");
         loginFlow.realizarLogin(userWithoutPass.getUser(), userWithoutPass.getPass());
         validations.validarMensagemErroLogin();
@@ -50,7 +50,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Login usuário inválido")
-    public void shouldFailLoginWithInvalidUser(){
+    public void deveFalharAoRealizarLoginComUsuarioInvalido(){
         User invalidUser = user("usuarioErrado");
         loginFlow.realizarLogin(invalidUser.getUser(), invalidUser.getPass());
         validations.validarMensagemErroLogin();
@@ -58,7 +58,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     @DisplayName("Realizar logout de usuário logado")
-    public void shouldLogoutSuccessfully(){
+    public void deveRealizarLogoutComSucesso(){
         User validUser = user("usuarioValido");
         loginFlow.realizarLogin(validUser.getUser(), validUser.getPass());
         loginFlow.realizarLogout();

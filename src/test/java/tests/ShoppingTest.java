@@ -15,7 +15,7 @@ public class ShoppingTest extends BaseTest {
 
     private LoginFlow loginFlow;
     private PurchaseFlow purchaseFlow;
-    private User userPurchase = user("usuarioValido");
+    private User userPurchase = usuario("usuarioValido");
     private CheckoutInformation checkoutInformation = checkoutInformation("user1");
     private Validations validations;
 
@@ -25,7 +25,7 @@ public class ShoppingTest extends BaseTest {
         purchaseFlow = new PurchaseFlow(driver);
         validations = new Validations(loginFlow.getLoginPage(), loginFlow.getInventoryPage(), purchaseFlow.getCartPage(), purchaseFlow.getFinishOrderPage());
     }
-    private User user(String userType) {
+    private User usuario(String userType) {
         return JsonDataReader.getUser(userType);
     }
 
@@ -35,7 +35,7 @@ public class ShoppingTest extends BaseTest {
 
     @Test
     @DisplayName("Compra de um Item")
-    public void purchaseOneItem(){
+    public void reaLizarCompraDeUmItem(){
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         validations.validarLoginComSucesso();
         purchaseFlow.selectOneItemToCart();
@@ -50,7 +50,7 @@ public class ShoppingTest extends BaseTest {
 
     @Test
     @DisplayName("Compra de dois Itens")
-    public void purchaseTwoItems(){
+    public void realizarCompraDeDoisItens(){
         loginFlow.realizarLogin(userPurchase.getUser(), userPurchase.getPass());
         validations.validarLoginComSucesso();
         purchaseFlow.selectTwoItemsToCart();
