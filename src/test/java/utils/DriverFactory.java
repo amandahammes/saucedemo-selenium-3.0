@@ -12,7 +12,6 @@ public class DriverFactory {
     private static WebDriver driver;
 
     private DriverFactory() {
-        // impede instanciação
     }
 
     public static WebDriver getDriver() {
@@ -46,6 +45,7 @@ public class DriverFactory {
 
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-extensions");
+        options.addArguments("--incognito");
 
         return new ChromeDriver(options);
     }

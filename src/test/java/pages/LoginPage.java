@@ -1,4 +1,42 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import utils.WaitUtils;
+
 public class LoginPage {
+
+    private WebDriver driver;
+    private WaitUtils wait;
+
+    private By inputUsuario = By.id("user-name");
+    private By inputSenha = By.id("password");
+    private By botaoLogin = By.id("login-button");
+    private By mensagemErro = By.cssSelector("[data-test='error']");
+    private By caixaLogin = By.className("login-box");
+
+    public LoginPage(WebDriver driver){
+        this.driver = driver;
+        this.wait = new WaitUtils(driver);
+    }
+
+    public void preencherUsuario(String usuario){
+        wait.waitForVisibility(inputUsuario).sendKeys(usuario);
+    }
+
+    public void preencherSenha(String senha){
+        wait.waitForVisibility(inputSenha).sendKeys(senha);
+    }
+
+    public void clicarBotaoLogin(){
+        wait.waitForClickability(botaoLogin).click();
+    }
+
+    public String pegarMensagemErro(){
+        return wait.waitForVisibility(mensagemErro).getText();
+    }
+
+    public void esperarCaixaLoginVisivel(){
+        wait.waitForVisibility(caixaLogin);
+    }
 }
